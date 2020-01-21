@@ -20,7 +20,7 @@
 </style>
 
 		<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="CufQzS+TCFt0prRyeEy6JRriIfV0098Sk6SM4yodQ1sjhpExsK16MUipX03d14ewtN8PWSkb/twxKLPo1oeRJg==" />
+<meta name="csrf-token" content="2m/Zs/gelE8Rl5AC/RrfO+BqcrgKTJWYYE82kMJXTB8JaQALFUyyZVwBjAi/pIt0AOtZ3KWtFkbSWuDLqxAyBQ==" />
 		<style id="user-css-output" type="text/css"></style>
 	</head>
 	<body>
@@ -39,97 +39,172 @@
 </div></div></section><section data-id="b1232dc57fd5141c75794f5d20b7dd13"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="dacda380f3f71ddd673bb937ffc7aea7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; text-align: left;">
 <h2>How to inspect?</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 174px;" data-block-id="4322097afc3057af6eb57c1b0604762f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left; line-height: 1.56; border-width: 1px;" data-has-line-height="" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 190px;" data-block-id="4322097afc3057af6eb57c1b0604762f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left; line-height: 1.56; border-width: 1px;" data-has-line-height="" dir="ui">
 <ul>
-	<li style="color:rgb(255, 255, 255)"><p><strong>VSCode 1.10+</strong></p></li>
-	<li><p><strong>Chrome DevTools 55+</strong></p></li>
-	<li><p>CLI node-inspect</p></li>
-	<li><p>WebStorm</p></li>
+	<li style="color:rgb(255, 255, 255)">
+	<p><strong>VS Code 1.10+</strong></p>
+	</li>
+	<li>
+	<p><strong>Chrome DevTools 55+</strong></p>
+	</li>
+	<li>
+	<p>CLI node-inspect</p>
+	</li>
+	<li>
+	<p>WebStorm</p>
+	</li>
 </ul>
 </div></div></section><section data-id="f17d13ebbe421b575fafed6030b535ef"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="fa6625bcc9399eab4fa609d60c1d92e3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
-<h2>VSCode inspect</h2>
+<h2>VS Code inspect</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="9098f6f66800d83e668b5c2beb2b8d85"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 190px;" data-block-id="9098f6f66800d83e668b5c2beb2b8d85"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
 <ul>
-	<li style="color:rgb(255, 255, 255)"><p>Add configuration file <em>.vscode/launch.json</em></p></li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Add launch configurations <em>.vscode/launch.json</em></p>
+	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 403px; height: 204px; left: 80px; top: 242px;" data-block-id="c15036d95ab6efafdb30ea52f50a1ffe"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="json"><code data-line-numbers="">{
+
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 230px; left: 80px; top: 260px;" data-block-id="fa8a1504627da176083cf69c28856b3d"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="json"><code data-line-numbers="">{
   "version": "0.2.0",
   "configurations": [
     {
       "type": "node",
       "request": "attach",
-      "name": "Node: Debug"
+      "name": "Node: Nodemon",
+      "restart": true
     }
   ]
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="text" data-block-id="35e72a7efb94d2225718205643395408" style="height: auto; width: 800px; left: 80px; top: 490px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left; line-height: 1.755;" data-has-line-height="">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 520px;" data-block-id="0d104fa529cc4bd44afb396a6b5ed588"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
 <ul>
-	<li style="color:rgb(255, 255, 255)"><p>Run <em>node --inspect &lt;file&gt;</em></p></li>
-	<li style="color:rgb(255, 255, 255)"><p>Open debug panel</p></li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Run <em>node --inspect &lt;file&gt;</em></p>
+	</li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Open debug panel</p>
+	</li>
 </ul>
 </div></div></section><section data-id="f2d13a87cf0c385506621987bbdd4b4d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="9523eceb432b1682340ea65e6ff155b3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; text-align: left;">
 <h2>Chrome Devtools inspect</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="d11f286350ff505ceafc471c709334d8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 190px;" data-block-id="d11f286350ff505ceafc471c709334d8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
 <ul>
-	<li><p>Run <em>node --inspect &lt;file&gt;</em></p></li>
-	<li><p>Open <em>chrome://inspect</em></p></li>
-	<li><p>Inspect remote target</p></li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Chrome standalone inspect</p>
+	</li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>VS Code Chrome debugger</p>
+	</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 456px; height: 319px; left: 80px; top: 350px;" data-block-id="f579932f840865641846eac956d7a41e"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="712" data-natural-height="498" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/373850/images/6888529/pasted-from-clipboard.png"></div></div></section><section data-id="478fda6390457236e3d044b503cf7eb5"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 265px;" data-block-id="6a25feff33872613e4b6f6b217ea5434"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+</section><section data-id="fa3609dd71d7dfcff754ed8f00334d2d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="6fa59602409897a7a8e6f6540645e832"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+<h2>Chrome standalone inspect</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 190px;" data-block-id="7393997e952a3c173e6ad4461d90396b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
+<ul>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Run <em>node --inspect &lt;file&gt;</em></p>
+	</li>
+	<li>
+	<p>Open <em>chrome://inspect</em></p>
+	</li>
+	<li>
+	<p>Inspect remote target</p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="45befe76a68e437f2c493103ddab3544" style="width: 447px; height: 312.649px; left: 80px; top: 376.675px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="712" data-natural-height="498" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/373850/images/6888529/pasted-from-clipboard.png"></div></div></section><section data-id="3ff9b7de717d418f1b66ce33aee6738a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="a1842435ee8a9615d4a908dd6c137b0d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+<h2>VS Code Chrome debugger</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 190px;" data-block-id="7e6a6a631e7214cd3cf0dd4e479dd380"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
+<ul>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Add <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank">Debugger for Chrome</a> extension</p>
+	</li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Add launch configurations <em>.vscode/launch.json</em></p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 266px; left: 80px; top: 309px;" data-block-id="d6ba42aa6fac7198d915099808468a64"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="json"><code data-line-numbers="">{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Node: Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "trace": "verbose"
+    }
+  ]
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 581px;" data-block-id="27888b6e0e3cf7579d8e98dd9d77c4e2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
+<ul>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Run <em>node --inspect &lt;file&gt;</em></p>
+	</li>
+	<li style="color:rgb(255, 255, 255)">
+	<p>Open debug panel</p>
+	</li>
+</ul>
+</div></div></section><section data-id="478fda6390457236e3d044b503cf7eb5"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 265px;" data-block-id="6a25feff33872613e4b6f6b217ea5434"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h3>Live demo</h3>
 
 <h3>Node.js inspector</h3>
 
 <h3><a href="https://emojipedia.org/rocket/" target="_blank"><span class="S3Uucc">🚀</span></a></h3>
 </div></div></section><section data-id="757b12b031ffaf390911ce9a23cc0ad1"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="cec0039ed462dd8631fb7c14cf1b3f51"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
-<h2>Prerequisites</h2>
+<h2>Project example</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="896bb77151038463928525ecb9a5172b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
-<ul>
-	<li>
-	<p>VSCode</p>
-	</li>
-	<li>
-	<p>GIT</p>
-	</li>
-	<li>
-	<p>Terminal</p>
-	</li>
-	<li>
-	<p>Chrome</p>
-	</li>
-	<li style="color:rgb(255, 255, 255)">
-	<p>Clone the <a href="https://github.com/yoriiis/node-workshop" target="_blank">project</a> example</p>
-	</li>
-	<li style="color:rgb(255, 255, 255)">
-	<p>Open <span style="color:rgb(206, 145, 120)">`node-inspector`</span> directory</p>
-	</li>
-	<li style="color:rgb(255, 255, 255)">
-	<p>Install dependencies</p>
-	</li>
-</ul>
+<p>The minimalist project example includes a database of stores with coordinates and categories. The express endpoint filter stores by parameters (categories, latitude, longitude, radius, limit).</p>
+
+<p> </p>
+
+<p>It is a small extract of the original project <a href="https://github.com/yoriiis/storelocatorjs" target="_blank">storelocatorjs</a>.</p>
 </div></div>
+</section><section data-id="84a73cbc3561fd88908e7a8a8b2afcee"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="20b5beeb34a2e26234f7034dc216fe67"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+<h2>Prerequisites</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="212712f418bd6000ee415710de8da6d4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="" dir="ui"><ul>
+<li><p>VSCode</p></li>
+<li><p>GIT</p></li>
+<li><p>Terminal</p></li>
+<li><p>Chrome</p></li>
+<li style="color:rgb(255, 255, 255)"><p>Clone the <a href="https://github.com/yoriiis/node-workshop" target="_blank">project</a> example</p></li>
+<li style="color:rgb(255, 255, 255)"><p>Open <em>node-inspector</em> directory</p></li>
+<li style="color:rgb(255, 255, 255)"><p>Install dependencies</p></li>
+</ul></div></div>
 </section><section data-id="b43a673f7788003e2844d941f4354c24"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="6cc42c197296c9afe677730140fc0854"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
 <h2>Demo steps</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="5600054c1937fa8d6b56d9fb21c88264"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
 <ul>
-	<li><p>Run npm script <span style="color:rgb(206, 145, 120)">`npm start`</span></p></li>
-	<li><p>Access the <a href="http://localhost:3000/?lat=48.8589507&amp;lng=2.2770202&amp;categories%5B%5D=1&amp;radius=50&amp;limit=10" target="_blank">webservice</a></p></li>
-	<li><p>Run npm script <span style="color:#ce9178">`npm run debug`</span></p></li>
-	<li><p>Run VSCode inspector listener</p></li>
+	<li>
+	<p>Run <span style="color:rgb(206, 145, 120)">`npm start`</span></p>
+	</li>
+	<li>
+	<p>Access the <a href="http://localhost:3000/?lat=48.8589507&amp;lng=2.2770202&amp;categories%5B%5D=1&amp;radius=50&amp;limit=10" target="_blank">webservice</a></p>
+	</li>
+	<li>
+	<p>Add breakpoints into the plugin</p>
+	</li>
+	<li>
+	<p>Run <span style="color:#ce9178">`npm run inspect`</span></p>
+	</li>
+	<li>
+	<p>Run VS Code debug <em>Node: Nodemon</em></p>
+	</li>
 	<li>
 	<p>Refresh the browser</p>
 	</li>
 	<li>
-	<p>Manipulate the VSCode inspector</p>
+	<p>Manipulate the VS Code inspector</p>
 	</li>
 	<li>
-	<p>Open the Chrome inspector</p>
+	<p>Test VS Code debug <em>Node: Chrome</em></p>
 	</li>
 </ul>
 </div></div>
@@ -236,9 +311,19 @@ module.exports = {
 
 <h3><span class="S3Uucc"><a href="https://emojipedia.org/rocket/" target="_blank">🚀</a></span></h3>
 </div></div></section><section data-id="67f1f19de258cf108c1fc388845e125e"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="d61d75201bfbd63693774e0521de5015"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
-<h2>Prerequisites</h2>
+<h2>Project example</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="b36fc53e7f18c70f84f4e8251d5a6028"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
+<p>The minimalist project example includes a Webpack configuration with two entrypoints.</p>
+
+<p> </p>
+
+<p>It is a small extract of the original project <a href="https://github.com/yoriiis/chunks-webpack-plugin" target="_blank"><span>chunks-webpack-plugin</span></a>.</p>
+</div></div>
+</section><section data-id="aab5b0987177c5512341d6d79d2f4dba"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="7fa220f25fc91039b77b10dd648aa027"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+<h2>Prerequisites</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="67be870c6ef270f7d204eceace0ffafd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
 <ul>
 	<li>
 	<p>VSCode</p>
@@ -256,7 +341,7 @@ module.exports = {
 	<p>Clone the <a href="https://github.com/yoriiis/node-workshop" target="_blank">project</a> example</p>
 	</li>
 	<li style="color:rgb(255, 255, 255)">
-	<p>Open <span style="color:rgb(206, 145, 120)">`webpack-plugin`</span> directory</p>
+	<p>Open <em>webpack-plugin</em> directory</p>
 	</li>
 	<li style="color:rgb(255, 255, 255)">
 	<p>Install dependencies</p>
@@ -269,7 +354,7 @@ module.exports = {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="195aa5bbd335847e08e9623d7cbf20a7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="">
 <ul>
 	<li>
-	<p>Run npm script <span style="color:rgb(206, 145, 120)">`npm start`</span></p>
+	<p>Run <span style="color:rgb(206, 145, 120)">`npm start`</span></p>
 	</li>
 	<li>
 	<p>Check build files</p>
@@ -278,19 +363,19 @@ module.exports = {
 	<p>Add breakpoints into the plugin</p>
 	</li>
 	<li>
-	<p>Run npm script <span style="color:#ce9178">`npm run inspect`</span></p>
+	<p>Run <span style="color:#ce9178">`npm run inspect`</span></p>
 	</li>
 	<li>
-	<p>Run VSCode inspector listener</p>
+	<p>Run VS Code debug <em>Node: Nodemon</em></p>
 	</li>
 	<li>
-	<p>Rerun npm script <span style="color:#ce9178">`npm run inspect`</span></p>
+	<p>Rerun <span style="color:#ce9178">`npm run inspect`</span></p>
 	</li>
 	<li>
-	<p>Manipulate the VSCode inspector</p>
+	<p>Manipulate the VS Code inspector</p>
 	</li>
 	<li>
-	<p>Open the Chrome inspector</p>
+	<p>Test VS Code debug <em>Node: Chrome</em></p>
 	</li>
 </ul>
 </div></div>
@@ -335,9 +420,9 @@ module.exports = {
 			</div>
 		</div>
 
-		
+
 <script>
-	var SLConfig = {"current_user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":true,"speaker_layout":null,"speaker_theme":null,"phone_number":"0683545705","phone_country_code":"33","media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"joris.daniel@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":796082,"storage_limit":262144000},"deck":{"id":1672563,"slug":"nodejs-inspector","title":"Node.js inspector \u0026 Webpack plugin","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2019-12-12T22:08:27.452Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/8673b659bdebe4f1d064634a310d5195/thumb.jpg?1578323306","view_count":1,"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":22,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1579362243072,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":true,"notes":{}},"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"current_user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":true,"speaker_layout":null,"speaker_theme":null,"phone_number":"0683545705","phone_country_code":"33","media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"joris.daniel@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":796082,"storage_limit":262144000},"deck":{"id":1672563,"slug":"nodejs-inspector","title":"Node.js inspector \u0026 Webpack plugin","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2019-12-12T22:08:27.452Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/8673b659bdebe4f1d064634a310d5195/thumb.jpg?1578323306","view_count":1,"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":26,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1579622047015,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":true,"notes":{}},"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
 
 		<script>
@@ -387,7 +472,7 @@ nomarkup:"-ne -eq -lt -gt -ge -le -not -like -notlike -match -notmatch -contains
 				width: SLConfig.deck.width,
 				height: SLConfig.deck.height,
 				margin: 0.05,
-				
+
 
 				hash: true,
 				controls: true,
@@ -416,7 +501,7 @@ nomarkup:"-ne -eq -lt -gt -ge -le -not -like -notlike -match -notmatch -contains
 			});
 		</script>
 
-		
+
 
 	</body>
 </html>
