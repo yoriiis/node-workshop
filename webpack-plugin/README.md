@@ -12,12 +12,12 @@ It is a small extract of the original project [chunks-webpack-plugin](https://gi
 
 ## Demo steps
 
-* Run npm script `npm start`
+* Run `npm start`
 * Check build files
 * Add breakpoints into the plugin
-* Run npm script `npm run inspect`
-* Run VSCode inspector listener
-* Rerun npm script `npm run inspect`
-* Manipulate the VSCode inspector
+* Run `npm run inspect`
+* Run VS Code debug _Node: Nodemon
+* Rerun `npm run inspect`
+* Manipulate the VS Code inspector
 * Open the Chrome inspector
 * Play with `compiler` and `compilation` objects

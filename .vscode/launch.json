@@ -1,0 +1,21 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Node: Nodemon",
+			"restart": true
+		},
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Node: Chrome",
+			"url": "http://localhost:3000/?lat=48.8589507&lng=2.2770202&categories[]=1&radius=50&limit=10",
+			"webRoot": "${workspaceFolder}/node-inspector",
+			"sourceMaps": true,
+			"breakOnLoad": true,
+			"trace": "verbose"
+		}
+	]
+}
