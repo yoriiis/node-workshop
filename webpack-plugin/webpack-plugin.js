@@ -30,7 +30,7 @@ module.exports = class MyWebpackPlugin {
 
 		// Insert this list into the webpack build as a new file asset:
 		const filelist = 'hello world'
-		compilation.assets['hello.md'] = {
+		compilation.assets[this.options.filename] = {
 			source: function () {
 				return filelist
 			},

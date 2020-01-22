@@ -4,6 +4,8 @@ The minimalist project example includes a database of stores with coordinates an
 
 It is a small extract of the original project [storelocatorjs](https://github.com/yoriiis/storelocatorjs).
 
+[License storelocatorjs](https://github.com/yoriiis/storelocatorjs#licenses)
+
 ## Available npm scripts
 
 * `npm start`

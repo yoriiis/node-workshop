@@ -44,7 +44,11 @@ module.exports = (env, argv) => {
 				chunkFilename: 'css/[name].css'
 			}),
 			new MyWebpackPlugin({
-				name: 'My first Webpack plugin'
+				outputPath: path.resolve(__dirname, `../web/assets`),
+				filename: 'example.md',
+				onBuild: (manifest) => {
+					console.log(manifest);
+				}
 			}),
 			new ManifestPlugin({
 				writeToFileEmit: true,
