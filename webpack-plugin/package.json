@@ -2,9 +2,9 @@
 	"name": "node-workshop--webpack-plugin",
 	"main": "./src/index.js",
 	"scripts": {
-		"build": "rm -rf ./dist/ && webpack --config=./example/webpack.config.js --mode=production",
-		"inspect": "rm -rf ./dist/ && node --inspect node_modules/webpack/bin/webpack.js --config=./example/webpack.config.js --mode=development --hidden=node_modules/",
-		"start": "rm -rf ./dist/ && webpack --config=./example/webpack.config.js --mode=development",
+		"build": "rm -rf .example/dist/ && webpack --config=./example/webpack.config.js --mode=production",
+		"inspect": "rm -rf ./example/dist/ && node --inspect node_modules/webpack/bin/webpack.js --config=./example/webpack.config.js --mode=development --hidden=node_modules/",
+		"start": "rm -rf ./example/dist/ && webpack --config=./example/webpack.config.js --mode=development",
 		"test:watch": "jest --watch"
 	},
 	"dependencies": {

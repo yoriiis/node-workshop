@@ -20,5 +20,5 @@
 		"source.fixAll.eslint": true
 	},
 	"editor.rulers": [100],
-	"debug.node.autoAttach": "on"
+	"debug.node.autoAttach": "off"
 }
