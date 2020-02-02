@@ -20,7 +20,7 @@
 </style>
 
 		<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="UuzZlzUtwTEYEd6as/M2ifqXVjm9L1IcT4cR1kU/iQOhbBA8AOS8sy2xpQN8OLYL0MqPWxiJG/u8DIjjCXS8fw==" />
+<meta name="csrf-token" content="nv5PI71+pvOcxMRSGT9X7+kx9DCv1q+8ALqVroLPEag3TqaorJaR3849lGsJzXP7nNGPJXTYrA7dHmSZz44/jA==" />
 		<style id="user-css-output" type="text/css"></style>
 	</head>
 	<body>
@@ -217,7 +217,7 @@
 	<p>Access the <a href="http://localhost:3000/?lat=48.8589507&amp;lng=2.2770202&amp;categories%5B%5D=1&amp;radius=50&amp;limit=10" target="_blank">webservice</a></p>
 	</li>
 	<li>
-	<p>Add breakpoints into the plugin</p>
+	<p>Add breakpoints into the source files</p>
 	</li>
 	<li>
 	<p>Run <span style="color:#ce9178">`npm run inspect`</span></p>
@@ -262,14 +262,14 @@
 </div></div></section><section data-id="b303f8b575b6d1ae1e2e86e929df137b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="32d9e471626be05265fb2bf5cfb25ff6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
 <h2>Write a Javascript class</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 800px; height: 385.17px; left: 80px; top: 270px;" data-block-id="04a1aad81ba040c0a2e1abadee5cbc80"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">module.exports = class MyWebpackPlugin {
+<div class="sl-block" data-block-type="code" style="width: 813px; height: 385.17px; left: 80px; top: 270px;" data-block-id="04a1aad81ba040c0a2e1abadee5cbc80"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">module.exports = class MyWebpackPlugin {
   /**
    * Apply function is automatically called by the Webpack main compiler
    *
    * @param {Object} compiler The Webpack compiler variable
    */
   apply (compiler) {
-    compiler.hooks.emit.tap('MyWebpackPlugin', this.hookEmit.bind(this));
+    compiler.hooks.emit.tap('MyWebpackPlugin', this.hookCallback.bind(this));
   }
 
   /**
@@ -277,7 +277,7 @@
    *
    * @param {Object} compilation The Webpack compilation variable
    */
-  hookEmit (compilation) {
+  hookCallback (compilation) {
     console.log(compilation);
   }
 };</code></pre></div></div>
@@ -310,21 +310,21 @@
 </div></div></section><section data-id="1ab67d680e7355593f9383a9a7a2cee8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="afa33722526b4b5767ec4c1a1ff92e05"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
 <h2> Include the plugin</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 570px; height: 151.554px; left: 80px; top: 210px;" data-block-id="dc2e0e564cb7c402895cdfcdf584c648"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">const MyWebpackPlugin = require('./webpack-plugin');
+<div class="sl-block" data-block-type="code" style="width: 570px; height: 151.554px; left: 80px; top: 210px;" data-block-id="dc2e0e564cb7c402895cdfcdf584c648"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">const SampleWebpackPlugin = require('../src/index');
 
 module.exports = {
   plugins: [
-    new MyWebpackPlugin()
+    new SampleWebpackPlugin()
   ]
 };</code></pre></div></div></section><section data-id="a28685bac140b4db9e623cf230115afc"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="130fb930925f6aaaf0572af2f4e99367"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
 <h2>Add some parameters</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 800px; height: 288px; left: 80px; top: 210px;" data-block-id="b02069b62e49c5223c432f6dd5107fb5"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">const path = require('path');
-const MyWebpackPlugin = require('./webpack-plugin');
+const SampleWebpackPlugin = require('../src/index');
 
 module.exports = {
   plugins: [
-    new MyWebpackPlugin({
+    new SampleWebpackPlugin({
       outputPath: path.resolve(__dirname, `../web/assets`),
       fileName: 'manifest.json',
       onBuild: (manifest) =&gt; {
@@ -420,10 +420,48 @@ module.exports = {
 	<li><a href="https://github.com/yoriiis/chunks-webpack-plugin" target="_blank">Chunks Webpack Plugin</a></li>
 </ul>
 </div></div>
-</section><section data-id="92b97323302091e300c8a031ee3339ae"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="a590eb21598bd5af32720e0013c54953"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+</section><section data-id="b5bca473bab7f04fd2aa57555352d521"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="a0dce5cc035bb5349db6b8b767e64e10"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+<h2>Test Webpack compiler</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 191px; left: 80px; top: 210px;" data-block-id="f6281b0a2e516acc8f4e8ef3d66aa3c3"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="javascript"><code data-line-numbers="">beforeEach(() =&gt; {
+	compilerWebpack = {
+		hooks: {
+			emit: {
+				tap: () =&gt; {}
+			}
+		}
+	};
+});</code></pre></div></div></section><section data-id="c8251b84fd951c8a084748aa9974def7"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="c3ec0ab6aacfce47e2c61e0ae8b74f45"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
+<h2>Test Webpack compilation</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 454px; left: 80px; top: 210px;" data-block-id="64b922ee2d60b05361f55afb9345c63d"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">const entrypointsMap = new Map();
+entrypointsMap.set('app-a', {
+	chunks: {
+		files: [
+			'css/app-a.css',
+			'js/app-a.js'
+		]
+	},
+	getFiles: () =&gt; entrypointsMap.get('app-a').chunks.files
+});
+
+beforeEach(() =&gt; {
+	compilationWebpack = {
+		assets: {},
+		entrypoints: entrypointsMap,
+		options: {
+			output: {
+				path: '/dist/',
+				publicPath: '/dist'
+			}
+		}
+	};
+});</code></pre></div></div></section><section data-id="92b97323302091e300c8a031ee3339ae"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="a590eb21598bd5af32720e0013c54953"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; text-align: left;">
 <h2>Resources</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="a75860a69abf7371064859c3594fc35a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.755; border-width: 1px;" data-has-line-height="" dir="ui">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 174px;" data-block-id="a75860a69abf7371064859c3594fc35a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; line-height: 1.56; border-width: 1px;" data-has-line-height="" dir="ui">
 <ul>
 	<li>
 	<p><a href="https://nodejs.org/de/docs/guides/debugging-getting-started/" target="_blank">https://nodejs.org/de/docs/guides/debugging-getting-started/</a></p>
@@ -443,6 +481,9 @@ module.exports = {
 	<li>
 	<p><a href="https://webpack.js.org/api/compilation-hooks/" target="_blank">https://webpack.js.org/api/compilation-hooks/</a></p>
 	</li>
+	<li>
+	<p><a href="https://itnext.io/the-absolute-easiest-way-to-debug-node-js-with-vscode-2e02ef5b1bad" target="_blank">https://itnext.io/the-absolute-easiest-way-to-debug-node-js-with-vscode-2e02ef5b1bad</a></p>
+	</li>
 </ul>
 </div></div></section><section data-id="b1b9ed36496014fd6e9ed7eea871c51b"><div class="sl-block" data-block-type="text" data-block-id="1d5c4b23d7ff20359ce64a9905a55548" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 313px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Thanks! <strong>🙌</strong>
@@ -453,7 +494,7 @@ module.exports = {
 
 
 <script>
-	var SLConfig = {"current_user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":true,"speaker_layout":null,"speaker_theme":null,"phone_number":"0683545705","phone_country_code":"33","media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"joris.daniel@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":796082,"storage_limit":262144000},"deck":{"id":1672563,"slug":"nodejs-inspector","title":"Node.js inspector \u0026 Webpack plugin","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2019-12-12T22:08:27.452Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/8673b659bdebe4f1d064634a310d5195/thumb.jpg?1578323306","view_count":1,"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":27,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1580487646646,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":true,"notes":{}},"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"current_user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":true,"speaker_layout":null,"speaker_theme":"dark","phone_number":"0683545705","phone_country_code":"33","media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"joris.daniel@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":796082,"storage_limit":262144000},"deck":{"id":1672563,"slug":"nodejs-inspector","title":"Node.js inspector \u0026 Webpack plugin","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2019-12-12T22:08:27.452Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/8673b659bdebe4f1d064634a310d5195/thumb.jpg?1578323306","view_count":1,"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":29,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1580643513252,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":true,"notes":{"f17d13ebbe421b575fafed6030b535ef":"\"debug.node.autoAttach\": \"on\"","b303f8b575b6d1ae1e2e86e929df137b":"emit: Executed right before emitting assets to output dir"}},"user":{"id":373850,"username":"yoriiis","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/4091e5178662504846622509ed39113a?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":209533,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
 
 		<script>
