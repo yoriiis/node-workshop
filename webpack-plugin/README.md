@@ -10,7 +10,7 @@ It is a small extract of the original project [chunks-webpack-plugin](https://gi
 
 - `npm start`
 - `npm build`
-- `npm inspect`
+- `npm run inspect`
 
 ## Demo steps
 

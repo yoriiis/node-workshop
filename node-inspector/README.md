@@ -9,7 +9,7 @@ It is a small extract of the original project [storelocatorjs](https://github.co
 ## Available npm scripts
 
 - `npm start`
-- `npm inspect`
+- `npm run inspect`
 
 ## Demo steps
 
