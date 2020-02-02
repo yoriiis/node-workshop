@@ -1,9 +1,11 @@
 {
 	"name": "node-workshop--webpack-plugin",
+	"main": "./src/index.js",
 	"scripts": {
-		"build": "rm -rf ./dist/ && webpack --mode=production",
-		"inspect": "rm -rf ./dist/ && node --inspect node_modules/webpack/bin/webpack.js --mode=development --hidden=node_modules/",
-		"start": "rm -rf ./dist/ && webpack --mode=development"
+		"build": "rm -rf ./dist/ && webpack --config=./example/webpack.config.js --mode=production",
+		"inspect": "rm -rf ./dist/ && node --inspect node_modules/webpack/bin/webpack.js --config=./example/webpack.config.js --mode=development --hidden=node_modules/",
+		"start": "rm -rf ./dist/ && webpack --config=./example/webpack.config.js --mode=development",
+		"test:watch": "jest --watch"
 	},
 	"dependencies": {
 		"sanitize.css": "11.0.0",
@@ -11,7 +13,10 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.7.7",
+		"@babel/preset-env": "7.8.3",
+		"babel-eslint": "10.0.3",
 		"babel-loader": "8.0.6",
+		"babel-plugin-dynamic-import-node": "2.3.0",
 		"css-loader": "3.4.1",
 		"eslint": "6.8.0",
 		"eslint-config-standard": "14.1.0",
@@ -19,8 +24,10 @@
 		"eslint-plugin-node": "11.0.0",
 		"eslint-plugin-promise": "4.2.1",
 		"eslint-plugin-standard": "4.0.1",
+		"jest": "24.9.0",
 		"mini-css-extract-plugin": "0.9.0",
 		"optimize-css-assets-webpack-plugin": "5.0.3",
+		"prettier-eslint": "9.0.1",
 		"terser-webpack-plugin": "2.3.1",
 		"webpack": "4.41.5",
 		"webpack-cli": "3.3.10",

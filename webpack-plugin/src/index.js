@@ -1,14 +1,14 @@
 /**
- * MyWebpackPlugin
+ * SampleWebpackPlugin
  */
-module.exports = class MyWebpackPlugin {
+module.exports = class SampleWebpackPlugin {
 	/**
 	 * Instanciate the constructor
 	 *
 	 * @param {options}
 	 */
 	constructor (options) {
-		this.options = options
+		this.options = options;
 	}
 
 	/**
@@ -17,7 +17,10 @@ module.exports = class MyWebpackPlugin {
 	 * @param {Object} compiler The Webpack compiler variable
 	 */
 	apply (compiler) {
-		compiler.hooks.emit.tap('MyWebpackPlugin', this.hookEmit.bind(this))
+		compiler.hooks.emit.tap(
+			'SampleWebpackPlugin',
+			this.hookCallback.bind(this)
+		);
 	}
 
 	/**
@@ -25,18 +28,16 @@ module.exports = class MyWebpackPlugin {
 	 *
 	 * @param {Object} compilation The Webpack compilation variable
 	 */
-	hookEmit (compilation) {
-		// console.log(compilation)
-
+	hookCallback (compilation) {
 		// Insert this list into the webpack build as a new file asset:
-		const filelist = 'hello world'
-		compilation.assets[this.options.filename] = {
-			source: function () {
-				return filelist
-			},
-			size: function () {
-				return filelist.length
-			}
-		}
+		// const text = 'hello world';
+		// compilation.assets[this.options.filename] = {
+		// 	source: function () {
+		// 		return text;
+		// 	},
+		// 	size: function () {
+		// 		return text.length;
+		// 	}
+		// };
 	}
-}
+};

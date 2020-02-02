@@ -31,12 +31,12 @@ const Stores = class Stores {
 		radius = 50,
 		limit = 0
 	}) {
-		this.database = database
-		this.lat = lat
-		this.lng = lng
-		this.categories = categories
-		this.radius = parseInt(radius)
-		this.limit = parseInt(limit)
+		this.database = database;
+		this.lat = lat;
+		this.lng = lng;
+		this.categories = categories;
+		this.radius = parseInt(radius);
+		this.limit = parseInt(limit);
 	}
 
 	/**
@@ -45,10 +45,13 @@ const Stores = class Stores {
 	 */
 	filter () {
 		// Check if the request is filtered by category
-		let stores = this.categories.length === 0 ? this.database : this.filterStoreByCategory(this.categories)
+		const stores =
+			this.categories.length === 0
+				? this.database
+				: this.filterStoreByCategory(this.categories);
 
 		// Filter store by geoposition
-		return this.filterStoreByGeoPosition(stores)
+		return this.filterStoreByGeoPosition(stores);
 	}
 
 	/**
@@ -57,17 +60,21 @@ const Stores = class Stores {
 	 * @return {Object} Stores filtered by categories
 	 */
 	filterStoreByCategory (categories) {
-		let storesFiltered = []
+		const storesFiltered = [];
 
 		// Loop on all stores, with filter
-		for (let i = 0, lengthStores = this.database.length; i < lengthStores; i++) {
-			let currentStore = this.database[i]
+		for (
+			let i = 0, lengthStores = this.database.length;
+			i < lengthStores;
+			i++
+		) {
+			const currentStore = this.database[i];
 			if (categories.indexOf(currentStore.category) !== -1) {
-				storesFiltered.push(currentStore)
+				storesFiltered.push(currentStore);
 			}
 		}
 
-		return storesFiltered
+		return storesFiltered;
 	}
 
 	/**
@@ -76,13 +83,13 @@ const Stores = class Stores {
 	 * @return {Object} Stores filtered by geoposition
 	 */
 	filterStoreByGeoPosition (stores) {
-		let listStores = []
-		let currentStore
-		let storesByDistance
+		const listStores = [];
+		let currentStore;
+		let storesByDistance;
 
 		// Loop on all store and calculate distance between point
 		for (let i = 0, lengthStores = stores.length; i < lengthStores; i++) {
-			currentStore = stores[i]
+			currentStore = stores[i];
 
 			// Calculate the distance between store coordinate and request coordinate
 			storesByDistance = this.getDistanceBetweenCoordinate({
@@ -91,34 +98,38 @@ const Stores = class Stores {
 				lat2: currentStore.lat,
 				lng2: currentStore.lng,
 				unit: 'K'
-			})
-			currentStore.distance = storesByDistance
-			listStores.push(currentStore)
+			});
+			currentStore.distance = storesByDistance;
+			listStores.push(currentStore);
 		}
 
 		// Sort by distance to mapcenter
 		listStores.sort((arrayA, arrayB) => {
 			if (arrayA.distance < arrayB.distance) {
-				return -1
+				return -1;
 			} else if (arrayA.distance > arrayB.distance) {
-				return 1
+				return 1;
 			} else {
-				return 0
+				return 0;
 			}
-		})
+		});
 
-		let storesFiltered = []
-		for (let i = 0, lengthStores = listStores.length; i < lengthStores; i++) {
+		const storesFiltered = [];
+		for (
+			let i = 0, lengthStores = listStores.length;
+			i < lengthStores;
+			i++
+		) {
 			if (listStores[i].distance > this.radius) {
-				break
+				break;
 			}
-			storesFiltered.push(listStores[i])
+			storesFiltered.push(listStores[i]);
 			if (this.limit !== 0 && storesFiltered.length === this.limit) {
-				break
+				break;
 			}
 		}
 
-		return storesFiltered
+		return storesFiltered;
 	}
 
 	// This routine calculates the distance between two points (given the
@@ -143,28 +154,22 @@ const Stores = class Stores {
 	// Official Web site: http://www.geodatasource.com
 	//
 	// GeoDataSource.com (C) All Rights Reserved 2015
-	getDistanceBetweenCoordinate ({
-		lat1,
-		lng1,
-		lat2,
-		lng2,
-		unit
-	}) {
-		let theta = lng1 - lng2
-		let dist =
+	getDistanceBetweenCoordinate ({ lat1, lng1, lat2, lng2, unit }) {
+		const theta = lng1 - lng2;
+		const dist =
 			Math.sin(this.deg2rad(lat1)) * Math.sin(this.deg2rad(lat2)) +
 			Math.cos(this.deg2rad(lat1)) *
-			Math.cos(this.deg2rad(lat2)) *
-			Math.cos(this.deg2rad(theta))
-		let miles = this.rad2deg(Math.acos(dist)) * 60 * 1.1515
-		unit = unit.toUpperCase()
+				Math.cos(this.deg2rad(lat2)) *
+				Math.cos(this.deg2rad(theta));
+		const miles = this.rad2deg(Math.acos(dist)) * 60 * 1.1515;
+		unit = unit.toUpperCase();
 
 		if (unit === 'K') {
-			return miles * 1.609344
+			return miles * 1.609344;
 		} else if (unit === 'N') {
-			return miles * 0.8684
+			return miles * 0.8684;
 		} else {
-			return miles
+			return miles;
 		}
 	}
 
@@ -174,7 +179,7 @@ const Stores = class Stores {
 	 * @return Radius number
 	 */
 	deg2rad (x) {
-		return x * (Math.PI / 180)
+		return x * (Math.PI / 180);
 	}
 
 	/**
@@ -183,8 +188,8 @@ const Stores = class Stores {
 	 * @return Degree number
 	 */
 	rad2deg (x) {
-		return x * (180 / Math.PI)
+		return x * (180 / Math.PI);
 	}
-}
+};
 
-module.exports = Stores
+module.exports = Stores;

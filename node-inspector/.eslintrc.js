@@ -21,7 +21,7 @@ module.exports = {
 		indent: ['error', 'tab', { ignoredNodes: ['TemplateLiteral > *'] }],
 		'no-tabs': 0,
 		'no-console': 0,
-		'no-debugger': 0
+		semi: [1, 'always']
 	},
 
 	globals: {
@@ -29,4 +29,4 @@ module.exports = {
 		navigator: false,
 		window: false
 	}
-}
+};

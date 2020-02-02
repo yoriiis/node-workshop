@@ -1,18 +1,18 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const ManifestPlugin = require('webpack-manifest-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const MyWebpackPlugin = require('./webpack-plugin')
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const SampleWebpackPlugin = require('../src/index');
 
 module.exports = (env, argv) => {
-	const isProduction = argv.mode === 'production'
+	const isProduction = argv.mode === 'production';
 
 	return {
 		watch: !isProduction,
 		entry: {
-			'app-a': './src/js/app-a.js',
-			'app-b': './src/js/app-b.js'
+			'app-a': `${path.resolve(__dirname, './src/js/app-a.js')}`,
+			'app-b': `${path.resolve(__dirname, './src/js/app-b.js')}`
 		},
 		watchOptions: {
 			ignored: /node_modules/
@@ -24,29 +24,35 @@ module.exports = (env, argv) => {
 			filename: 'js/[name].js'
 		},
 		module: {
-			rules: [{
-				test: /\.js$/,
-				use: [{
-					loader: 'babel-loader'
-				}]
-			}, {
-				test: /\.css$/,
-				use: [
-					MiniCssExtractPlugin.loader, {
-						loader: 'css-loader'
-					}
-				]
-			}]
+			rules: [
+				{
+					test: /\.js$/,
+					use: [
+						{
+							loader: 'babel-loader'
+						}
+					]
+				},
+				{
+					test: /\.css$/,
+					use: [
+						MiniCssExtractPlugin.loader,
+						{
+							loader: 'css-loader'
+						}
+					]
+				}
+			]
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
 				filename: 'css/[name].css',
 				chunkFilename: 'css/[name].css'
 			}),
-			new MyWebpackPlugin({
-				outputPath: path.resolve(__dirname, `../web/assets`),
+			new SampleWebpackPlugin({
+				outputPath: path.resolve(__dirname, '../web/assets'),
 				filename: 'example.md',
-				onBuild: (manifest) => {
+				onBuild: manifest => {
 					console.log(manifest);
 				}
 			}),
@@ -89,5 +95,5 @@ module.exports = (env, argv) => {
 				name: true
 			}
 		}
-	}
-}
+	};
+};
