@@ -17,6 +17,7 @@ module.exports = class SampleWebpackPlugin {
 	 * @param {Object} compiler The Webpack compiler variable
 	 */
 	apply (compiler) {
+		// console.log(compiler);
 		compiler.hooks.emit.tap(
 			'SampleWebpackPlugin',
 			this.hookCallback.bind(this)
